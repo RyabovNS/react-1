@@ -18,7 +18,7 @@ export const usersAPI = {
             .then(response => response.data)
     },
     follow(id) {
-        return instance.post(`follow/${id}`, {})
+        return instance.post(`follow/${id}`)
             .then(response => response.data)
     },
     unfollow(id) {
