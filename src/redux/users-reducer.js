@@ -76,12 +76,12 @@ export const getUsers = (currentPage, pageSize) => (dispatch) => {
     usersAPI
         .getUsers(currentPage, pageSize)
         .then(data => {
+            dispatch(setCurrentPage(currentPage));
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
         });
 }
-
 export const follow = (id) => (dispatch) => {
     dispatch(toggleFollowingProgress(true, id));
     usersAPI
@@ -93,7 +93,6 @@ export const follow = (id) => (dispatch) => {
             dispatch(toggleFollowingProgress(false, id));
         });
 }
-
 export const unfollow = (id) => (dispatch) => {
     dispatch(toggleFollowingProgress(true, id));
     usersAPI
