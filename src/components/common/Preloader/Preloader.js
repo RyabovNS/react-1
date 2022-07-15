@@ -1,4 +1,4 @@
-const Preloader = (props) => {
+const Preloader = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +20,6 @@ const Preloader = (props) => {
                 ></animateTransform>
             </path>
         </svg>
-
-        // <div style={{backgroundColor:"white"}}>
-        //     <img scr={preloader}/>
-        // </div>
     );
 }
 
