@@ -1,14 +1,12 @@
 import React from 'react';
-import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import {Routes, Route, HashRouter} from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Login from "./components/Login/Login";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -16,6 +14,9 @@ import withRouter from "./components/common/Legacy/withRouter";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
+
+const DialogsContainer = React.lazy(() => import ('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import ('./components/Profile/ProfileContainer'));
 
 class App extends React.Component {
 
@@ -33,16 +34,18 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Navbar/>
                 <div className="app-wrapper-content">
-                    <Routes>
-                        <Route path='/profile/:userId' element={<ProfileContainer/>}/>
-                        <Route path='/profile' element={<ProfileContainer/>}/>
-                        <Route path='/dialogs/*' element={<DialogsContainer/>}/>
-                        <Route path='/users/*' element={<UsersContainer/>}/>
-                        <Route path='/news/*' element={<News/>}/>
-                        <Route path='/music/*' element={<Music/>}/>
-                        <Route path='/settings/*' element={<Settings/>}/>
-                        <Route path='/login' element={<Login/>}/>
-                    </Routes>
+                    <React.Suspense fallback={<div><Preloader /></div>}>
+                        <Routes>
+                            <Route path='/profile/:userId' element={<ProfileContainer/>}/>
+                            <Route path='/profile' element={<ProfileContainer/>}/>
+                            <Route path='/dialogs/*' element={<DialogsContainer/>}/>
+                            <Route path='/users/*' element={<UsersContainer/>}/>
+                            <Route path='/news/*' element={<News/>}/>
+                            <Route path='/music/*' element={<Music/>}/>
+                            <Route path='/settings/*' element={<Settings/>}/>
+                            <Route path='/login' element={<Login/>}/>
+                        </Routes>
+                    </React.Suspense>
                 </div>
             </div>
         );
@@ -59,11 +62,11 @@ let AppContainer = compose(
 
 const ReactJSApp = () => {
     return <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <Provider store={store}>
                 <AppContainer/>
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 }
 
