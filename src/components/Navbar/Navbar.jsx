@@ -1,39 +1,28 @@
-import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+
+import styles from './Navbar.module.scss';
 
 const Navbar = () => {
+  const [active, onActive] = useState(null);
+
+  const links = ['/profile', '/dialogs', '/users', '/news', '/music', '/settings'];
+  const linksName = ['Profile', 'Messages', 'Users', 'News', 'Music', 'Settings'];
+
   return (
-    <nav className={s.nav}>
-      <div className={s.item}>
-        <NavLink to='/profile' className={({ isActive }) => (isActive ? s.active : '')}>
-          Profile
-        </NavLink>
-      </div>
-      <div className={`${s.item} ${s.active}`}>
-        <NavLink to='/dialogs' className={({ isActive }) => (isActive ? s.active : '')}>
-          Messages
-        </NavLink>
-      </div>
-      <div className={s.item}>
-        <NavLink to='/users' className={({ isActive }) => (isActive ? s.active : '')}>
-          Users
-        </NavLink>
-      </div>
-      <div className={s.item}>
-        <NavLink to='/news' className={({ isActive }) => (isActive ? s.active : '')}>
-          News
-        </NavLink>
-      </div>
-      <div className={s.item}>
-        <NavLink to='/music' className={({ isActive }) => (isActive ? s.active : '')}>
-          Music
-        </NavLink>
-      </div>
-      <div className={s.item}>
-        <NavLink to='/settings' className={({ isActive }) => (isActive ? s.active : '')}>
-          Settings
-        </NavLink>
-      </div>
+    <nav>
+      <ul>
+        {links.map((link, index) => (
+          <NavLink to={link}>
+            <li
+              key={index}
+              onClick={() => onActive(index)}
+              className={active === index ? styles.active : ''}>
+              {linksName[index]}
+            </li>
+          </NavLink>
+        ))}
+      </ul>
     </nav>
   );
 };

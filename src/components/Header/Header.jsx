@@ -1,22 +1,36 @@
-import s from './Header.module.css';
-
 import { NavLink } from 'react-router-dom';
+
+import styles from './Header.module.scss';
+
+import socialNetworkLogoSvg from '../../assets/images/social-network-logo.svg';
 
 const Header = props => {
   return (
-    <header className={s.header}>
-      <img
-        src='https://w7.pngwing.com/pngs/818/848/png-transparent-coca-cola-pepsi-globe-logo-pepsi-beverage-can-red-pepsi-thumbnail.png'
-        alt=''
-      />
-      <div className={s.loginBlock}>
-        {props.isAuth ? (
-          <div>
-            {props.login} - <button onClick={props.logout}>Log out</button>
+    <header>
+      <div className={styles.container}>
+        <NavLink to='/'>
+          <div className={styles.logo}>
+            <img src={socialNetworkLogoSvg} alt='Social Network Logo' />
+            <div>
+              <h1>Social Network</h1>
+              <p>общение без ограничений</p>
+            </div>
           </div>
-        ) : (
-          <NavLink to={'login'}>Login</NavLink>
-        )}
+        </NavLink>
+        <div className={styles.login}>
+          {props.isAuth ? (
+            <div className={styles.button}>
+              {props.login}
+              <button onClick={props.logout} className={styles.auth}>
+                Log out
+              </button>
+            </div>
+          ) : (
+            <NavLink to={'login'} className={styles.auth}>
+              Login
+            </NavLink>
+          )}
+        </div>
       </div>
     </header>
   );
