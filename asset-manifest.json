@@ -1,24 +1,28 @@
 {
   "files": {
-    "main.css": "/react-1/static/css/main.a765df92.css",
-    "main.js": "/react-1/static/js/main.adbc2e8b.js",
+    "main.css": "/react-1/static/css/main.a958ae86.css",
+    "main.js": "/react-1/static/js/main.97a04307.js",
     "static/css/254.8e177917.chunk.css": "/react-1/static/css/254.8e177917.chunk.css",
     "static/js/254.0d72efef.chunk.js": "/react-1/static/js/254.0d72efef.chunk.js",
-    "static/css/529.3327012b.chunk.css": "/react-1/static/css/529.3327012b.chunk.css",
-    "static/js/529.b8bb3f84.chunk.js": "/react-1/static/js/529.b8bb3f84.chunk.js",
+    "static/css/622.ae51659d.chunk.css": "/react-1/static/css/622.ae51659d.chunk.css",
+    "static/js/622.be1d5293.chunk.js": "/react-1/static/js/622.be1d5293.chunk.js",
     "static/js/787.9c4083a9.chunk.js": "/react-1/static/js/787.9c4083a9.chunk.js",
     "static/media/user.png": "/react-1/static/media/user.b89021c6aad79cb2ff90.png",
+    "static/media/work-in-progress.png": "/react-1/static/media/work-in-progress.c090d4ff601c67d47301.png",
+    "static/media/welcome.png": "/react-1/static/media/welcome.74cb297582b76d2cf49d.png",
+    "static/media/social-network-logo.svg": "/react-1/static/media/social-network-logo.410d459c2d15c48682e4ac1a4e1df3e9.svg",
+    "static/media/post-avatar.svg": "/react-1/static/media/post-avatar.db1b725f41935c3c90dafa16ef9dedfa.svg",
     "index.html": "/react-1/index.html",
-    "main.a765df92.css.map": "/react-1/static/css/main.a765df92.css.map",
-    "main.adbc2e8b.js.map": "/react-1/static/js/main.adbc2e8b.js.map",
+    "main.a958ae86.css.map": "/react-1/static/css/main.a958ae86.css.map",
+    "main.97a04307.js.map": "/react-1/static/js/main.97a04307.js.map",
     "254.8e177917.chunk.css.map": "/react-1/static/css/254.8e177917.chunk.css.map",
     "254.0d72efef.chunk.js.map": "/react-1/static/js/254.0d72efef.chunk.js.map",
-    "529.3327012b.chunk.css.map": "/react-1/static/css/529.3327012b.chunk.css.map",
-    "529.b8bb3f84.chunk.js.map": "/react-1/static/js/529.b8bb3f84.chunk.js.map",
+    "622.ae51659d.chunk.css.map": "/react-1/static/css/622.ae51659d.chunk.css.map",
+    "622.be1d5293.chunk.js.map": "/react-1/static/js/622.be1d5293.chunk.js.map",
     "787.9c4083a9.chunk.js.map": "/react-1/static/js/787.9c4083a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a765df92.css",
-    "static/js/main.adbc2e8b.js"
+    "static/css/main.a958ae86.css",
+    "static/js/main.97a04307.js"
   ]
 }
